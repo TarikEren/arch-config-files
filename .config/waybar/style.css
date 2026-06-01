@@ -1,0 +1,77 @@
+@define-color bg	#202020;
+@define-color fg	#d0d0d0;
+@define-color critical	#920202;
+
+* {
+	border: none;
+	border-radius: 0px;
+	font-family: "Adwaita Sans", "JetBrainsMono Nerd Font Propo", "sans-serif";
+	font-weight: bold;
+	font-size: 12px; min-height: 0;
+	padding: 0;
+	margin: 0;
+	background: @bg;
+	color: @fg;
+}
+
+tooltip {
+	background: @bg;
+}
+
+tooltip label {
+	padding: 0.5em;
+}
+
+#network, #custom-notification, #pulseaudio {
+	margin: 0.5em;
+}
+
+#workspaces {
+	margin: 0.5em 0 0 0.75em;
+}
+
+#workspaces button label {
+	padding: 0.5em;
+	margin: 0 0.25em 0.5em 0.25em;
+}
+
+#workspaces button.empty {
+	opacity: 0.5
+}
+
+#workspaces button.active label {
+	background: @fg;
+	color: @bg;
+	transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.urgent {
+	background: @critical;
+	color: @bg;
+}
+
+#network.disabled, #network.disconnected {
+	color: @critical;
+}
+
+#network.linked, #network.ethernet, #network.wifi {
+	color: @fg;
+}
+
+#custom-menu {
+	padding: 0.5em 0 0.5em 0.75em;
+	font-size: 1.25em;
+}
+
+#custom-notification {
+	font-size: 1.25em;
+}
+
+#tray {
+	font-size: 1em;
+	margin: 0 0.5em 0 0;
+}
+
+#tray menu menuitem {
+	padding: 0.5em;
+}
