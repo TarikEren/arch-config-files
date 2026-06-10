@@ -16,7 +16,7 @@ $BACK)
     ~/.config/waybar/scripts/super_menu.sh
     ;;
 $UPDATE)
-    run_command 'sudo pacman -Syu'
+    run_command 'sudo pacman -Syu && yay -Syu'
     ;;
 $BTOP)
     kitty btop
