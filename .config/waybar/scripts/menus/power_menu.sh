@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+source $HOME/.config/waybar/scripts/definitions.sh
+
 SHUTDOWN="󰐥 Shutdown"
 REBOOT="󰑐 Reboot"
 SLEEP="󰤄 Sleep"
@@ -11,7 +13,7 @@ input=$(echo -e $options | walker --dmenu)
 
 case "$input" in
 $BACK)
-    ~/.config/waybar/scripts/super_menu.sh
+    $SCRIPTS_DIR/super_menu.sh
     ;;
 $SHUTDOWN)
     shutdown now
