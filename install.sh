@@ -39,7 +39,7 @@ done
 
 # Stow the configs
 stow .
-printf "[INFO] Stowed configs"
+printf "[INFO] Stowed configs\n"
 
 # Reload hyprctl if hyprland is running
 if printenv HYPRLAND_INSTANCE_SIGNATURE &>/dev/null; then
