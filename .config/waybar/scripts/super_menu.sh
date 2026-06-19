@@ -18,10 +18,22 @@ $HEALTH)
     $MENU_DIR/health_menu.sh
     ;;
 $WIFI)
-    kitty sudo impala
+    if [ ! -n "$(find /sys/class/net/*/ -name wireless 2>/dev/null)" ]; then
+        notify-send "Connect Error" "No WiFi device found"
+    else
+        kitty sudo impala
+    fi
     ;;
 $BLUETOOTH)
-    kitty bluetui
+    if ! rfkill list bluetooth | grep -qi "bluetooth"; then
+        notify-send "Bluetooth Error" "No bluetooth device found"
+    else
+        if systemctl is-active bluetooth | grep -qi "inactive"; then
+            notify-send "Bluetooth Error" "Bluetooth service is not running"
+        else
+            kitty bluetui
+        fi
+    fi
     ;;
 *)
     exit 1
