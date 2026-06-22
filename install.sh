@@ -36,6 +36,15 @@ for dir in "${CONFIG_DIRS[@]}"; do
         fi
     fi
 done
+if [ -e "$HOME/.vimrc" ] || [ -L "$HOME/.vimrc" ] ; then
+	if [ -L "$HOME/.vimrc"] && [[ "$(readlink -f "$HOME/.vimrc") == "$(realpath "$SCRIPT_DIR/.vimrc")"" ]]; then
+		printf "[INFO] .vimrc is already correctly stowed. Skipping...\n"
+	else
+		printf "[WARN] .vimrc exists. Creating backup...\n"
+		mkdir -p "$BACKUP_DIR"
+		mv "$HOME/.vimrc" "$BACKUP_DIR/"
+	fi
+fi
 
 # Stow the configs
 stow .
