@@ -7,7 +7,7 @@
 		"max-length": 50
 	},
 	"custom/menu": {
-		"format": "󰍜 ",
+		"format": "󰣇",
 		"tooltip-format": "Super menu",
 		"on-click": "~/.config/waybar/scripts/super_menu.sh"
 	},
