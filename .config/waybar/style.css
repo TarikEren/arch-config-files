@@ -1,6 +1,12 @@
-@define-color bg	#202020;
-@define-color fg	#d0d0d0;
-@define-color critical	#920202;
+@define-color bg	    #232A2E;
+@define-color fg	    #D3C6AA;
+@define-color critical-fg	#E67E80;
+@define-color critical-bg	#E67E80;
+@define-color success-bg   #3C4841;
+@define-color success-fg   #A7C080;
+@define-color cpu       #3A515D;
+@define-color memory    #514045;
+@define-color menu      #1793D1; /* Arch logo color */
 
 * {
 	border: none;
@@ -22,8 +28,29 @@ tooltip label {
 	padding: 0.5em;
 }
 
-#network, #custom-notification, #pulseaudio {
-	margin: 0.5em;
+#cpu, #memory, #network, #pulseaudio, #custom-notification, #tray, #disk {
+    margin: 0.25em;
+    padding: 0.5em;
+}
+
+#cpu {
+    background: @cpu;
+}
+
+#memory {
+    background: @memory;
+}
+
+#pulseaudio {
+    background: #45433C;
+}
+
+#disk {
+    background: #4F5B58;
+}
+
+#custom-notification {
+    background: #495156;
 }
 
 #workspaces {
@@ -45,22 +72,20 @@ tooltip label {
 	transition: all 0.3s ease-in-out;
 }
 
-#workspaces button.urgent {
-	background: @critical;
-	color: @bg;
-}
-
-#network.disabled, #network.disconnected {
-	color: @critical;
+#workspaces button.urgent, #network.disabled, #network.disconnected {
+	background: @critical-bg;
+	color: @critical-fg;
 }
 
 #network.linked, #network.ethernet, #network.wifi {
-	color: @fg;
+	background: @success-bg;
+	color: @success-fg;
 }
 
 #custom-menu {
 	padding: 0.25em 0 0.25em 0.75em;
 	font-size: 1.5em;
+    color: @menu;
 }
 
 #custom-notification {

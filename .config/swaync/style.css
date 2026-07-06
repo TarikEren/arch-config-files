@@ -1,51 +1,33 @@
 :root {
-  --cc-bg: rgba(46, 46, 46, 0.9);
-  --noti-border-color: rgba(255, 255, 255, 0.15);
-  --noti-bg: 48, 48, 48;
-  --noti-bg-alpha: 0.8;
-  --noti-bg-darker: rgb(38, 38, 38);
-  --noti-bg-hover: rgb(56, 56, 56);
-  --noti-bg-focus: rgba(68, 68, 68, 0.6);
-  --noti-close-bg: rgb(78, 78, 78);
-  --noti-close-bg-hover: rgb(94, 94, 94);
-  --text-color: rgb(255, 255, 255);
-  --text-color-disabled: rgb(150, 150, 150);
-  --bg-selected: rgb(0, 128, 255);
-  --notification-icon-size: 64px;
-  --notification-app-icon-size: calc(var(--notification-icon-size) / 3);
-  --notification-group-icon-size: 32px;
-  --border: 1px solid var(--noti-border-color);
-  --border-radius: 0px;
-  --notification-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3),
-    0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
-  --font-size-body: 15px;
-  --font-size-summary: 16px;
-  /* Deprecated variables (because of their typos). Keeeping them around for backwards compatibility. */
-  --hover-tranistion: background 0.15s ease-in-out;
-  --group-collapse-tranistion: opacity 400ms ease-in-out;
-  --hover-transition: var(--hover-tranistion);
-  --group-collapse-transition: var(--group-collapse-tranistion);
+    --cc-bg: #232A2E;
+    --noti-border-color: #475258;
+    --noti-bg: #2D353B;
+    --noti-bg-alpha: 0.8;
+    --noti-bg-darker: #232A2E;
+    --noti-bg-hover: #4F585E;
+    --noti-bg-focus: #4F585E;
+    --noti-close-bg: #56635F;
+    --noti-close-bg-hover: #7A8478;
+    --text-color: #D3C6AA;
+    --text-color-disabled: #859289;
+    --bg-selected: #3A515D;
+    --noti-critical: #E67E80;
+    --notification-icon-size: 64px;
+    --notification-app-icon-size: calc(var(--notification-icon-size) / 3);
+    --notification-group-icon-size: 32px;
+    --border: 1px solid var(--noti-border-color);
+    --border-radius: 0px;
+    --notification-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3),
+      0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
+    --font-size-body: 15px;
+    --font-size-summary: 16px;
+    --hover-transition: background 0.15s ease-in-out;
+    --group-collapse-transition: opacity 400ms ease-in-out;
 }
 
-/* Fallback for older CSS themes */
-/* Fallback for older CSS themes */
-@define-color cc-bg rgba(46, 46, 46, 0.7);
-@define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg rgba(48, 48, 48, 0.8);
-@define-color noti-bg-opaque rgb(48, 48, 48);
-@define-color noti-bg-darker rgb(38, 38, 38);
-@define-color noti-bg-hover rgb(56, 56, 56);
-@define-color noti-bg-hover-opaque rgb(56, 56, 56);
-@define-color noti-bg-focus rgba(68, 68, 68, 0.6);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-@define-color text-color rgb(255, 255, 255);
-@define-color text-color-disabled rgb(150, 150, 150);
-@define-color bg-selected rgb(0, 128, 255);
-
-notificationwindow, blankwindow {
-  background: transparent;
-}
+/* notificationwindow, blankwindow { */
+/*   background: transparent; */
+/* } */
 
 .close-button {
   /* The notification Close Button */
@@ -65,7 +47,7 @@ notificationwindow, blankwindow {
 .close-button:hover {
   box-shadow: none;
   background: var(--noti-close-bg-hover);
-  transition: var(--hover-tranistion);
+  transition: var(--hover-transition);
   border: none;
 }
 
@@ -87,20 +69,13 @@ notificationwindow, blankwindow {
   border-radius: var(--border-radius);
   border: var(--border);
   padding: 0;
-  transition: var(--hover-tranistion);
-  background: rgba(var(--noti-bg), var(--noti-bg-alpha));
-}
-
-.notification-row .notification-background .notification.low {
-  /* Low Priority Notification */
-}
-
-.notification-row .notification-background .notification.normal {
-  /* Normal Priority Notification */
+  transition: var(--hover-transition);
+  background: var(--noti-bg);
 }
 
 .notification-row .notification-background .notification.critical {
-  /* Critical Priority Notification */
+    /* Critical Priority Notification */
+    color: var(--noti-critical);
 }
 
 .notification-row .notification-background .notification .notification-default-action {
@@ -111,7 +86,7 @@ notificationwindow, blankwindow {
   background: transparent;
   border: none;
   color: var(--text-color);
-  transition: var(--hover-tranistion);
+  transition: var(--hover-transition);
   border-radius: var(--border-radius);
 }
 
@@ -158,7 +133,6 @@ notificationwindow, blankwindow {
   /* Notification summary/title */
   font-size: var(--font-size-summary);
   font-weight: bold;
-  background: transparent;
   color: var(--text-color);
   text-shadow: none;
 }
@@ -167,7 +141,6 @@ notificationwindow, blankwindow {
   /* Notification time-ago */
   font-size: var(--font-size-summary);
   font-weight: bold;
-  background: transparent;
   color: var(--text-color);
   text-shadow: none;
   margin-right: 30px;
@@ -177,7 +150,6 @@ notificationwindow, blankwindow {
   /* Notification body */
   font-size: var(--font-size-body);
   font-weight: normal;
-  background: transparent;
   color: var(--text-color);
   text-shadow: none;
 }
@@ -219,7 +191,6 @@ notificationwindow, blankwindow {
   background: initial;
   color: var(--text-color-disabled);
   border: var(--border);
-  border-color: transparent;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-button:hover {
@@ -332,7 +303,6 @@ notificationwindow, blankwindow {
 
 .control-center .control-center-list {
   /* List of notifications */
-  background: transparent;
 }
 
 .control-center .control-center-list .notification {
@@ -341,7 +311,7 @@ notificationwindow, blankwindow {
 
 .control-center .control-center-list .notification .notification-default-action,
 .control-center .control-center-list .notification .notification-action {
-  transition: var(--group-collapse-tranistion), var(--hover-tranistion);
+  transition: var(--group-collapse-transition), var(--hover-transition);
 }
 
 .control-center .control-center-list .notification .notification-default-action:hover,
@@ -351,11 +321,9 @@ notificationwindow, blankwindow {
 
 .blank-window {
   /* Window behind control center and on all other monitors */
-  background: transparent;
 }
 
 .floating-notifications {
-  background: transparent;
 }
 
 .floating-notifications .notification {

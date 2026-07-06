@@ -1,8 +1,7 @@
-@define-color window_bg_color #202020;
-@define-color accent_bg_color #54546d;
-@define-color theme_fg_color  #d0d0d0;
-@define-color error_bg_color  #920202;
-@define-color error_fg_color  #DCD7BA;
+@define-color bg            #232A2E;
+@define-color accent        #3D484D;
+@define-color fg            #D3C6AA;
+@define-color critical      #543A48;
 
 * {
     all: unset;
@@ -10,8 +9,8 @@
 }
 
 popover {
-  background: lighter(@window_bg_color);
-  border: 1px solid darker(@accent_bg_color);
+  background: lighter(@bg);
+  border: 1px solid darker(@accent);
   padding: 10px;
 }
 
@@ -31,15 +30,15 @@ scrollbar {
   box-shadow:
     0 19px 38px rgba(0, 0, 0, 0.3),
     0 15px 12px rgba(0, 0, 0, 0.22);
-  background: @window_bg_color;
+  background: @bg;
   padding: 20px;
-  border: 1px solid darker(@accent_bg_color);
+  border: 1px solid darker(@accent);
 }
 
 .preview-box,
 .elephant-hint,
 .placeholder {
-  color: @theme_fg_color;
+  color: @fg;
 }
 
 .box {
@@ -50,14 +49,14 @@ scrollbar {
 }
 
 .input selection {
-  background: lighter(lighter(lighter(@window_bg_color)));
+  background: lighter(lighter(lighter(@bg)));
 }
 
 .input {
-  caret-color: @theme_fg_color;
-  background: lighter(@window_bg_color);
+  caret-color: @fg;
+  background: lighter(@bg);
   padding: 10px;
-  color: @theme_fg_color;
+  color: @fg;
 }
 
 .input:focus,
@@ -74,7 +73,7 @@ scrollbar {
 }
 
 .list {
-  color: @theme_fg_color;
+  color: @fg;
 }
 
 child {
@@ -85,14 +84,14 @@ child {
 }
 
 .item-quick-activation {
-  background: alpha(@accent_bg_color, 0.25);
+  background: alpha(@accent, 0.25);
   padding: 10px;
 }
 
 /* child:hover .item-box, */
 child:selected .item-box,
 row:selected .item-box {
-  background: alpha(@accent_bg_color, 0.25);
+  background: alpha(@accent, 0.25);
 }
 
 .item-text-box {
@@ -113,9 +112,9 @@ row:selected .item-box {
 }
 
 .preview {
-  border: 1px solid alpha(@accent_bg_color, 0.25);
+  border: 1px solid alpha(@accent, 0.25);
   /* padding: 10px; */
-  color: @theme_fg_color;
+  color: @fg;
 }
 
 .calc .item-text {
@@ -151,9 +150,9 @@ row:selected .item-box {
 
 .keybinds {
   padding-top: 10px;
-  border-top: 1px solid lighter(@window_bg_color);
+  border-top: 1px solid lighter(@bg);
   font-size: 12px;
-  color: @theme_fg_color;
+  color: @fg;
 }
 
 .global-keybinds {
@@ -180,13 +179,13 @@ row:selected .item-box {
 
 .keybind-label {
   padding: 2px 4px;
-  border: 1px solid @theme_fg_color;
+  border: 1px solid @fg;
 }
 
-.error {
+.critical {
   padding: 10px;
-  background: @error_bg_color;
-  color: @error_fg_color;
+  background: @critical;
+  color: @fg;
 }
 
 :not(.calc).current {
