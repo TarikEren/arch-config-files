@@ -1,11 +1,10 @@
 :root {
-    --cc-bg: #232A2E;
+    --cc-bg: #293136;
     --noti-border-color: #475258;
     --noti-bg: #2D353B;
-    --noti-bg-alpha: 0.8;
     --noti-bg-darker: #232A2E;
     --noti-bg-hover: #4F585E;
-    --noti-bg-focus: #4F585E;
+    --noti-bg-focus: #3A464C;
     --noti-close-bg: #56635F;
     --noti-close-bg-hover: #7A8478;
     --text-color: #D3C6AA;
@@ -83,7 +82,6 @@
   padding: 10px;
   margin: 0;
   box-shadow: none;
-  background: transparent;
   border: none;
   color: var(--text-color);
   transition: var(--hover-transition);
@@ -102,7 +100,6 @@
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content {
-  background: transparent;
   border-radius: var(--border-radius);
   padding: 0;
 }
@@ -181,7 +178,7 @@
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-button {
   margin-left: 4px;
-  background: rgba(var(--noti-bg), var(--noti-bg-alpha));
+  background: var(--noti-bg);
   border: var(--border);
   border-radius: var(--border-radius);
   color: var(--text-color);
@@ -272,7 +269,7 @@
 }
 
 .notification-group.collapsed .notification-row .notification {
-  background-color: rgba(var(--noti-bg), 1);
+  background-color: var(--noti-bg);
 }
 
 .notification-group.collapsed .notification-row:not(:last-child) {
