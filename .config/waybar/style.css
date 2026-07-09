@@ -27,7 +27,7 @@ tooltip label {
 	margin: 0.5em;
 }
 
-#cpu, #memory, #disk {
+#cpu, #memory, #disk, #battery {
     margin: 0.25em;
     padding: 0.5em;
 }
@@ -39,6 +39,9 @@ tooltip label {
 }
 #disk {
     background: #55544A;
+}
+#battery {
+    background: #48584E;
 }
 
 #workspaces {
