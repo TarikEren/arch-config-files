@@ -3,9 +3,9 @@ source $HOME/.config/waybar/scripts/utils.sh
 source $HOME/.config/waybar/scripts/definitions.sh
 
 POWER="󰐥 Power"
-HEALTH="󰐕 Health"
-WIFI="Wifi"
-BLUETOOTH="Bluetooth"
+HEALTH=" Health"
+WIFI="󰖩 Wifi"
+BLUETOOTH="󰂯 Bluetooth"
 
 options="$POWER\n$HEALTH\n$WIFI\n$BLUETOOTH"
 input=$(echo -e $options | walker --dmenu -H)
